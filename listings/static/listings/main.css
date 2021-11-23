@@ -137,7 +137,7 @@ p {
 
 .links a {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
   letter-spacing: 0.125rem;
   padding: 1rem 1.5rem;
@@ -157,7 +157,7 @@ p {
 }
 
 .social-icons a {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin: 0 0.5rem;
   color: #010429;
   transition: all 0.3s linear;
