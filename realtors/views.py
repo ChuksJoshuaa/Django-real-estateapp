@@ -11,6 +11,6 @@ class realtor_view(CreateView):
 
     def get_success_url(self):
         messages.add_message(self.request, messages.INFO, f"You have successfully registered as a Realtor")
-        return "/pages/home/"
+        return "/"
 
 
