@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'bootstrap_modal_forms',
     'cloudinary',
 
      #my_own_app
