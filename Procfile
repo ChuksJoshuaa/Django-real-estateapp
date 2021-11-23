@@ -1,0 +1,1 @@
+web: gunicorn Real_Estate.wsgi

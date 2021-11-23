@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'listings/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'listings/realtor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'listings/footer.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <title>Chuks Real Estate Website</title>
+</head>
+<body>
+   <header>
+      {% include 'navbar.html' %}
+   </header>
+   <main>
+       {% if messages %}
+             {% for message in messages %}
+                <div class="message">{{ message }}</div>
+             {% endfor %}
+          {% endif %}
+     {% block content %}
+       {% endblock %}
+   </main>
+   <footer>
+       {% include 'other/footer.html' %}
+   </footer>
+  <script src="{% static 'listings/app.js' %}"></script>
+  <script src="{% static 'listings/footer.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>

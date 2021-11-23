@@ -1,0 +1,79 @@
+
+
+.message {
+  height: 25px;
+  width: 100%;
+  position: relative;
+  left: 0%;
+  bottom: 10%;
+  background: rgb(133, 194, 116);
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 500px) {
+   .message {
+      font-size: 0.7rem;
+   }
+}
+
+.head {
+  margin-bottom: 2%;
+}
+
+.field {
+  width: 40%;
+  position: relative;
+  top: 20%;
+  left: 30%;
+  margin: 10px;
+  font-size: 0.8em;
+  text-align: stretch
+}
+
+
+.join {
+  font-weight: bold;
+  font-size: 1.4em;
+  font-weight: 400;
+  background: hsl(209, 61%, 16%);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  border: 1px solid #222;
+}
+
+@media screen and (max-width: 1200px) {
+   .field {
+      width: 60%;
+      left: 15%;
+   }
+
+}
+
+
+@media screen and (max-width: 688px) {
+
+  .head {
+    margin-bottom: 5%;
+  }
+
+  .field {
+     width: 80%;
+     left: 6%;
+  }
+
+}
+
+@media screen and (max-width: 412px) {
+
+   .head {
+      margin-bottom: 5%;
+   }
+
+   .join {
+     font-size: 0.9rem;
+   }
+}
+

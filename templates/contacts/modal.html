@@ -1,0 +1,34 @@
+{% extends 'estate-base1.html' %}
+{% block name %}
+
+<form action="{% url 'contact' %}" method="POST" style="width: 50%; position: relative; left: 20%;">
+    {% csrf_token %}
+    <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
+     <div class="form-group">
+         <label for="property_name" class="col-form-label">Property:</label>
+          <input type="text" name="listing" class="form-control" value="{{ listing.title }}">
+     </div>
+    <div class="form-group">
+         <label for="listing_id" class="col-form-label">listing_id:</label>
+         <br>
+         <input type="number" name="listing_id" value="{{ listing.id }}">
+     </div>
+    <div class="form-group">
+        <label for="phone" class="col-form-label">Phone:</label>
+        <input type="text" name="phone" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="message" class="col-form-label">Message:</label>
+        <textarea name="message" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="realtor_email" class="col-form-label">Realtor_email:</label>
+        <textarea name="realtor_email" class="form-control">{{ listing.realtor.email }}</textarea>
+    </div>
+
+
+    <hr>
+     <input type="submit" value="Send" class="btn btn-block btn-secondary">
+</form>
+
+{% endblock %}

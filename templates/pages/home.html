@@ -1,0 +1,208 @@
+{% extends 'estate_base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %} | Welcome{% endblock %}
+
+{% block content %}
+    <section style="height: 600px;
+           background: url('{% static 'listings/Media/okay.jpg' %}');
+            background-size: cover; background-position: center;" id="back">
+        <div class="section1">
+           <div class="lead">
+              <h1>Property Searching Just Got So Easy</h1>
+              <p>
+                Let's find a home that's perfect for you
+              </p>
+           </div>
+          <div class="search">
+            <form action="{% url 'search' %}" class="search" method="get">
+              <div class="form-row">
+                <div class="row1">
+                      <input style="font-size: 1.2rem; font-family: 'helvetica', sans-serif;
+                             color: #010429; font-weight: 400;" type="text"
+                             data-id="input-element"
+                             data-model-name="input-element"
+                             spellcheck="false" aria-label="search properties by state"
+                             autocomplete="off" aria-haspopup="listbox" aria-autocomplete="list"
+                             aria-expanded="false" class="form-control"
+                             name = "state"
+                        placeholder="Search State. e.g. Lagos"/>
+                </div>
+                <button class="btn btn-secondary" type="submit" id="row1">
+                  <i class='fas fa-search'></i>
+                </button>
+              </div>
+
+            </form>
+          </div>
+       </div>
+    </section>
+  <br>
+
+
+   <section id="listings" class="py-5">
+    <div class="container">
+      <h3 class="text-start mb-1" style="font-weight: 700;">Latest Listings</h3>
+      <div class="row" style="margin-bottom: 5%;">
+        {% if listings %}
+          {% for listing in listings %}
+                   <div class="page-listing">
+                      <div style="background: url('{{ listing.photo_main.url }}');
+                       background-size: cover; background-position: center;" class="page-home">
+                      <h2><span class="badge badge-secondary text-white">${{ listing.price | intcomma}}</span></h2>
+                      </div>
+                        <h5>{{ listing.title }}</h5>
+                      <div class="page-cont">
+                          <p><i class="fas fa-bed">{{ listing.bedrooms }}bed</i></p>
+                          <p><i class="fas fa-bath">{{ listing.bathrooms }}bath</i></p>
+                          <p><i class="fas fa-th-large">{{ listing.sqft }}sqft</i></p>
+                      </div>
+                      <p class="state">
+                         <i class="fas fa-map-marker text-secondary">{{ listing.city }} {{ listing.state }},
+                           {{ listing.zipcode }}</i>
+                      </p>
+                      <a href="{{ listing.get_absolute_url }}" class="btn btn-secondary" id="page-btn">Details</a>
+                   </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <p>No listings available</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+   </section>
+
+   <div class="page-selling">
+       <h1>What's happening in <span class="date">Ikoyi, Lagos</span></h1>
+       <div id="page-info">
+         <div class="page-info">
+           <div class="info" >
+               <h2 style="color: crimson;" id="first"></h2>
+               <p>Homes for sale</p>
+           </div>
+            <div class="info">
+               <h2 style="color: crimson;" class="second"></h2>
+               <p>Open houses</p>
+           </div>
+            <div class="info">
+               <h2 style="color: crimson;" class="third"></h2>
+               <p>Recently Sold</p>
+           </div>
+            <div class="info">
+               <h2 style="color: crimson;" class="four"></h2>
+               <p>Price reduced</p>
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <div class="article">
+       <p style="margin-bottom: 10px;">.</p>
+       <h5>EXPERIENCED SERVICES PROVIDED</h5>
+       <div id="aside">
+           <div class="aside">
+               <img src="{% static 'listings/Media/sample9.jpg' %}">
+               <h2>Residential Home</h2>
+               <p>
+                   We have captured over 100 houses & apartments,
+                   allowing real estate developers & consultants to
+                   sell units faster & reach online & remote buyers
+               </p>
+           </div>
+           <div class="aside">
+               <img src="{% static 'listings/Media/sample 5.jpg' %}">
+               <h2>Refineries</h2>
+               <p>
+                   Reach remote stakeholders, showcase & document your
+                   commercial space using our virtual tour solution,
+                   drone video & photography
+               </p>
+           </div>
+           <div class="aside">
+               <img src="{% static 'listings/Media/hospital.jpg' %}">
+               <h2>Travel & Hospitality</h2>
+               <p>
+                   Let potential guests fully understand the layout
+                   & ambience of your amenities & event spaces, as
+                   if they were there physically
+               </p>
+           </div>
+           <div class="aside">
+               <img src="{% static 'listings/Media/sample6.jpg' %}">
+               <h2>Engineering & Construction</h2>
+                <p>
+                   We provide 3D Laser Scanning services using the Leica
+                   BLK 360 scanner for creation of CAD & BIM assets and
+                   to capture interior & exterior spaces.
+                </p>
+           </div>
+           <div class="aside">
+               <img src="{% static 'listings/Media/sample1.jpg' %}">
+               <h2>Insurance & Loss Adjusters</h2>
+                <p>
+                   Improve efficiency with our 3D capture technology for
+                   your insurance documentation, risk assessment, loss
+                   control, & claims management.
+                </p>
+           </div>
+           <div class="aside">
+               <img src="{% static 'listings/Media/sample.png' %}">
+               <h2>Schools & Universities</h2>
+                 <p>
+                   Increase enrollment by giving parents an initial feel of
+                   the surroundings & facilities even before they make an
+                   appointment to visit your school.
+                 </p>
+           </div>
+       </div>
+   </div>
+
+
+   <section id="" class="py-5 text-white" style="background-color: #fff">
+       <h3 class="text-start mb-1" style="font-weight: 700;
+            text-align: center; color: black;">Our Services</h3>
+  <div class="container" style="font-family: 'Ubuntu', sans-serif;">
+    <div class="row text-center" id="row-center">
+        <hr>
+      <div class="col-md-4" style="color: black;" id="row-col">
+          <h1 style="margin-bottom: 7%;"></h1>
+        <i class="fas fa-cogs fa-3x mr-4" style="margin-bottom: 3%;"></i>
+        <h4>Consulting Services</h4>
+        <p style="color: black; font-size: 0.9rem;">
+          Our management consulting services focus on our clients' most critical
+          issues and opportunities: strategy, marketing, organization, operations, technology,
+          transformation, digital, advanced analytics, corporate finance,
+          mergers & acquisitions and sustainability across all industries and geographies.
+        </p>
+      </div>
+         <hr/>
+      <div class="col-md-4" style="color: black;" id="row-col1">
+          <h1 style="margin-bottom: 7%;"></h1>
+        <i class="fas fa-home fa-3x mr-4" style="margin-bottom: 3%;"></i>
+        <h4>Property Management</h4>
+        <p style="color: black; font-size: 0.9rem;">
+          Property management is the daily oversight of residential,
+          commercial, or industrial real estate by a third-party contractor.
+          Generally, property managers take responsibility for day-to-day
+            repairs and ongoing maintenance, security, and upkeep of properties.
+        </p>
+      </div>
+         <hr />
+      <div class="col-md-4" style="color: black;" id="row-col2">
+          <h1 style="margin-bottom: 7%;"></h1>
+        <i class="fas fa-money-bill-alt fa-3x mr-4" style="margin-bottom: 3%;"></i>
+        <h4>Renting & Selling</h4>
+        <p style="color: black; font-size: 0.9rem;">
+          Renting can provide some security because you know you can return to your home.
+          Selling a house and then buying another home incurs costs,
+          so it may be cheaper to rent out your house and move back in when you return
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'listings/page.js' %}"></script>
+</section>
+
+{% endblock %}
