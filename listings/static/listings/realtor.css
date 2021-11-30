@@ -66,6 +66,22 @@
 
 }
 
+
+.naruto-head {
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+
+@media screen and (max-width: 700px) {
+
+     .naruto-head {
+         width: 80%;
+         left: 10%;
+       }
+}
+
+
 @media screen and (max-width: 412px) {
 
    .head {
@@ -76,4 +92,3 @@
      font-size: 0.9rem;
    }
 }
-

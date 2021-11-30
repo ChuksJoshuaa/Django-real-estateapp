@@ -20,7 +20,7 @@
               <div class="form-row">
                 <div class="row1">
                       <input style="font-size: 0.9rem; font-family: 'helvetica', sans-serif;
-                             color: #010429; font-weight: 800;" type="text"
+                             color: #010429; font-weight: 400;" type="text"
                              data-id="input-element"
                              data-model-name="input-element"
                              spellcheck="false" aria-label="search properties by state"
@@ -44,7 +44,7 @@
    <section id="listings" class="py-5">
     <div class="container">
       <h3 class="text-start mb-1" style="font-weight: 700;">Latest Listings</h3>
-      <div class="row" style="margin-bottom: 5%;">
+      <div class="row">
         {% if listings %}
           {% for listing in listings %}
                    <div class="page-listing">
@@ -71,6 +71,7 @@
           </div>
         {% endif %}
       </div>
+        <a href="{% url 'listing-home' %}" class="btn btn-outline-secondary" style="margin-bottom: 3%;">View More</a>
     </div>
    </section>
 

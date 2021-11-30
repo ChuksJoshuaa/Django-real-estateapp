@@ -1,8 +1,9 @@
 {% extends 'estate-base1.html' %}
 {% block name %}
 
-<form action="{% url 'contact' %}" method="POST" style="width: 50%; position: relative; left: 20%;">
+<form action="{% url 'contact' %}" method="POST" class="naruto-head">
     {% csrf_token %}
+    <h1 style="margin-bottom: 3%;"></h1>
     <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
      <div class="form-group">
          <label for="property_name" class="col-form-label">Property:</label>
@@ -11,7 +12,7 @@
     <div class="form-group">
          <label for="listing_id" class="col-form-label">listing_id:</label>
          <br>
-         <input type="number" name="listing_id" value="{{ listing.id }}">
+         <input type="text" name="listing_id" class="form-control"  value="{{ listing.id }}">
      </div>
     <div class="form-group">
         <label for="phone" class="col-form-label">Phone:</label>
