@@ -19,7 +19,7 @@ from .models import Listing
 def home_view(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
-    paginator = Paginator(listings, 5)
+    paginator = Paginator(listings, 6)
     page = request.GET.get('page')
     listings_page = paginator.get_page(page)
 
