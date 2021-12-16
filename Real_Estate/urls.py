@@ -20,6 +20,10 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from accounts import views
 
+admin.site.site_header = 'Estate Admin'
+admin.site.index_title = 'Admin page'
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('listings/', include('listings.urls')),
