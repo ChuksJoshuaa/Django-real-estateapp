@@ -1,12 +1,18 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
 {% if messages %}
     {% for mess in messages %}
         <div id="mess" class="container">
-            <div class="alert alert-{{  mess.tags }} alert-dismissable text-center" role="alert">
+            <div class="alert alert-{{  mess.tags }} alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <strong>
-                    {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    {% if mess.level == DEFAULT_MESSAGE_LEVELS. %}
                         Error:
                     {% else %}
                         {{ mess.tags|title }}
@@ -18,7 +24,13 @@
     {% endfor %}
 {% endif %}
 
-<script>
+ <script>
      $(".alert").alert('close')
      $('.alert').alert()
  </script>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
