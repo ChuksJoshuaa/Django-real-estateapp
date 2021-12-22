@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'captcha',
     'cloudinary',
 
      #my_own_app
@@ -162,6 +163,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+RECAPTCHA_PUBLIC_KEY = "6LeBNL8dAAAAANcQAnDwTB5d9iVtemfGRf8yWUni"
+RECAPTCHA_PRIVATE_KEY = "6LeBNL8dAAAAAAwgSlRTwTgY9bsW-3gFIX0pRuy0"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
