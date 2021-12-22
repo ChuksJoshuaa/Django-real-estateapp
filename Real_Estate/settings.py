@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'accounts',
     'listings',
     'pages',
-    'captcha',
     'contacts',
 ]
 
@@ -141,8 +140,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 
-RECAPTCHA_PUBLIC_KEY = '6Le1Lr8dAAAAAJXpV4qX2A5BgvRYuLPmSe2MBMtd'
-RECAPTCHA_PRIVATE_KEY = "6Le1Lr8dAAAAAFGD-k0Tr1MJzrI2XD3lQZR8HVYt"
+
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'chuksmbanaso',
