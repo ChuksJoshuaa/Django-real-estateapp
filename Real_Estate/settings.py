@@ -15,7 +15,6 @@ import os
 import cloudinary_storage
 import cloudinary
 import django_heroku
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -52,7 +51,6 @@ INSTALLED_APPS = [
     'accounts',
     'listings',
     'pages',
-    'captcha',
     'contacts',
 ]
 
@@ -141,8 +139,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 
-RECAPTCHA_PUBLIC_KEY = '6LeDNL8dAAAAALwi-jjZo9soBmOHjvVtih9_b7UI'
-RECAPTCHA_PRIVATE_KEY = "6LeDNL8dAAAAAPVyZ0ltUC4dhFiJPxyPUhdan3TT"
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'chuksmbanaso',
