@@ -38,12 +38,12 @@
     <div class="row">
       <div class="col-md-8">
         <h2>We Search For The Perfect Home</h2>
-        <p class="lead">
+        <p class="lead" style="color: #211f1f; font-weight: 400;">
           Real estate management is utilized for any type of rental property,
           including residential rentals or commercial real estate
         </p>
         <img src="{% static 'listings/Media/logo.jpg' %}" alt="" />
-        <p class="mt-4">
+        <p class="mt-4" style="color: #211f1f; font-weight: 500;">
           Real estate property management involves an understanding of operating expenses and budgeting.
           From this information, appropriate rental rates are set,
           balanced by the current market and what it will support in the way of rents.
@@ -65,7 +65,7 @@
               <div class="card-body">
                 <h5 class="card-title">Seller Of The Month</h5>
                 <h6 class="text-danger"><i class="fa fa-user">{{realtor.name}}</i></h6>
-                <p class="card-text">
+                <p class="card-text" style="color: #211f1f; font-weight: 400;">
                  {{ realtor.description }}
                 </p>
               </div>
@@ -92,12 +92,12 @@
               <i class="fas fa-award text-success mb-3"></i> Realtor
             </p>
             <hr />
-            <p><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
-            <p><i class="fas fa-envelope-open"></i> {{realtor.email}}</p>
+            <p style="color: #211f1f; font-weight: 400;"><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
+            <p style="color: #211f1f; font-weight: 400;"><i class="fas fa-envelope-open"></i> {{realtor.email}}</p>
           </div>
         {% endfor %}
       {%  else %}
-        <div class="col-md-12">
+        <div class="col-md-12" style="color: #211f1f; font-weight: 400;">
           <p>No realtors available</p>
         </div>
       {% endif %}

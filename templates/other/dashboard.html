@@ -8,7 +8,7 @@
         <div class="row text-center">
         <div class="col-md-12">
             <h1 class="display-4">User Dashboard</h1>
-            <p class="lead" style="font-size: 2.5rem;">Manage your Real Estate Account</p>
+            <p class="lead" style="font-size: 2.5rem; color: #211f1f; font-weight: 700;">Manage your Real Estate Account</p>
         </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
             <div class="col-md-12">
                 <h2>Welcome {{ user.username }}</h2>
                 {% if contacts %}
-                    <p>Here are the property listings that you have inquired about</p>
+                    <p style="color: #211f1f; font-weight: 500;">Here are the property listings that you have inquired about</p>
                     <table class="table">
                     <thead>
                         <tr>
@@ -57,7 +57,7 @@
                     </tbody>
                     </table>
                     {% else %}
-                        <p>You have not made any inquiries</p>
+                        <p style="color: #211f1f; font-weight: 500;">You have not made any inquiries</p>
                     {% endif %}
                 </div>
             </div>

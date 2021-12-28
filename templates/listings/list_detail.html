@@ -10,8 +10,8 @@
           <div class="row text-center">
             <div class="col-md-12">
               <h1 class="display-7" style="color: black; font-size: 1.8rem;">{{ listing.title }}</h1>
-              <p style="color: red;">Listing_id: {{ listing.id }}</p>
-              <p class="lead">
+              <p style="color: #211f1f; font-weight: 600;">Listing_id: {{ listing.id }}</p>
+              <p class="lead" style="color: #211f1f; font-weight: 600;">
                 <i class="fas fa-map-marker"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}</p>
             </div>
           </div>
@@ -73,7 +73,7 @@
                 </div>
                 {% endif %}
               </div>
-              {% if listing.realtor %}
+              {% if user.is_superuser %}
                 <div style="display: flex; margin: 0 10px;" class="update">
                      <a class="btn btn-outline-secondary btn-sm mt-1 mb-1" style="animation: none;"
                         href="{% url 'update' listing.id %}">
@@ -86,7 +86,7 @@
                 </div>
                {% endif %}
 
-              <div id="fields">
+              <div id="fields" style="color: #211f1f; font-weight: 500;">
                 <div class="col-md-6">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item text-secondary">
