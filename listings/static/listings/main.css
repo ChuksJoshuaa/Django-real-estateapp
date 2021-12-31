@@ -345,20 +345,20 @@ p {
 
 .row1 {
   position: relative;
-  left: 30%;
-  width: 40%;
+  left: 25%;
+  width: 50%;
   margin-bottom: 3px;
   font-size: 3rem;
 }
 
 #row1 {
   position: relative;
-  left: 30%;
+  left: 25%;
   margin: 0 1px;
   margin-bottom: 3px;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1200px) {
     .row1 {
        left: 19%;
        width: 60%;
@@ -367,7 +367,17 @@ p {
     #row1 {
       left: 19%;
     }
+}
 
+@media screen and (max-width: 900px) {
+    .row1 {
+       left: 4%;
+       width: 82%;
+    }
+
+    #row1 {
+      left: 4%;
+    }
 }
 
 /* page listing */
