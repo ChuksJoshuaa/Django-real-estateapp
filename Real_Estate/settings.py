@@ -15,6 +15,7 @@ import os
 import cloudinary_storage
 import cloudinary
 import django_heroku
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -140,6 +141,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 
+
+MESSAGE_TAGS = {
+    messages.WARNING: 'danger'
+}
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'chuksmbanaso',

@@ -1,7 +1,5 @@
 from django.shortcuts import render
-# Create your views here.
-from django.http import HttpResponse
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.core.paginator import Paginator
 from django.apps import apps
 Listing = apps.get_model('listings', 'Listing')
 Realtor = apps.get_model('realtors', 'Realtor')
@@ -23,6 +21,7 @@ def home_view(request):
     }
 
     return render(request, 'pages/home.html', context)
+
 
 def about_view(request):
     realtors = Realtor.objects.order_by('-hire_date')

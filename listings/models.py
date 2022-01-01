@@ -1,10 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime
-from django.core.files.storage import default_storage as storage
 from realtors.models import Realtor
-from PIL import Image
-# Create your models here.
+
 
 class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
