@@ -52,42 +52,13 @@ class ListingCreate(LoginRequiredMixin, CreateView):
 
 
 def search_view(request):
-    queryset_list = Listing.objects.order_by('-list_date')
-
-    # STATE
-    if 'state' in request.GET:
-        state = request.GET['state']
-        if state:
-            queryset_list = queryset_list.filter(state__iexact=state)
-
-    # CITY
-    if 'city' in request.GET:
-        city = request.GET['city']
-        if city:
-            queryset_list = queryset_list.filter(city__iexact=city)
-
-    # BEDROOMS
-    if 'bedrooms' in request.GET:
-        bedrooms = request.GET['bedrooms']
-        if bedrooms:
-            queryset_list = queryset_list.filter(bedrooms__lte=bedrooms)
-
-    # PRICE
-    if 'price' in request.GET:
-        price = request.GET['price']
-        if price:
-            queryset_list = queryset_list.filter(price__lte=price)
-
-
+    query = request.GET['query']
+    post = Listing.objects.filter(state__icontains=query) or Listing.objects.filter(city__icontains=query)
     context = {
-        'state_choices': state_choices,
-        'bedroom_choices': bedroom_choices,
-        'price_choices': price_choices,
-        'listings': queryset_list,
-        'values': request.GET,
+        "listings": post
     }
-
     return render(request, 'listings/search.html', context)
+
 
 class update_view(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = ListingForm
