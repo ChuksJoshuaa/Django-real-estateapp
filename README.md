@@ -49,7 +49,7 @@ Real Estate web app (Full Stack Frameworks with Django Project)
 
 ## Deployment
 
-- Make sure all the necessary python packages are installed 
+- Make sure all the necessary python packages are installed.
 
 - Also Make sure requirements.txt and Procfile exist pip3 freeze --local requirements.txt echo web: python app.py > Procfile
 
