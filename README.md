@@ -37,7 +37,7 @@ Real Estate web app (Full Stack Frameworks with Django Project)
 
 - [Heroku](https://www.heroku.com/) - It is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
-- [Gunicorn](https://gunicorn.org/) - Python WSGI HTTP Server for UNIX. It's a pre-fork worker model.
+- [Gunicorn](https://gunicorn.org/) - Python WSGI HTTP Server for UNIX. It's a pre-fork worker model..
 
 ## Getting started
 
