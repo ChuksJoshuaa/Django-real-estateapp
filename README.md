@@ -31,7 +31,7 @@ Real Estate web app (Full Stack Frameworks with Django Project)
 
 - [FontAwesome](https://fontawesome.com/) -  Font Awesome is designed to be used with inline elements (we like the <i> tag for brevity, but using a <span> is more semantically correct).
 
-- [PgAdmin](https://www.pgadmin.org/) - Open Source administration and development platform for PostgreSQL.
+- [PgAdmin](https://www.pgadmin.org/) - Open Source administration and development platform for PostgreSQL..
 
 ## Deployed With
 
