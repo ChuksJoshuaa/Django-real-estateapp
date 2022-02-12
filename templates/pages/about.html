@@ -92,7 +92,7 @@
               <i class="fas fa-award text-success mb-3"></i> Realtor
             </p>
             <hr />
-            <p style="color: #211f1f; font-weight: 400;"><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
+          <p style="color: #211f1f; font-weight: 400;"><i class="fas fa-phone"></i><a href="tel:{{ realtor.phone }}">{{ realtor.phone }}</a></p>
             <p style="color: #211f1f; font-weight: 400;"><i class="fas fa-envelope-open"></i> {{realtor.email}}</p>
           </div>
         {% endfor %}

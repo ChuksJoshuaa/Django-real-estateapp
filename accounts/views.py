@@ -37,5 +37,5 @@ def dashboard(request):
     context = {
         'contacts': user_contacts
     }
-    return render(request, 'other/dashboard.html', context)
+    return render(request, 'other/admin_dashboard.html', context)
 

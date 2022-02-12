@@ -11,7 +11,11 @@
             <a href="#home"></a>
           <ul class="links" id="links">
             <li><a href="{% url 'page-home' %}"><i class="fa fa-home">home</i></a></li>
-            <li><a href="{% url 'dashboard' %}"><i class="fa fa-dashcube">Dashboard</i></a></li>
+              {% if user.is_authenticated %}
+                 <li><a href="{% url 'dashboard' %}"><i class="fa fa-dashcube">Dashboard</i></a></li>
+              {% else %}
+                 <li></li>
+              {% endif %}
             <li><a href="{% url 'realtor-form' %}"><i class="fa fa-user">Realtor</i></a></li>
             <li><a href="{% url 'folium' %}"><i class="fa fa-map-marker">Map</i></a></li>
             <li><a href="{% url 'page-about' %}"><i class="fa fa-check-circle">about</i></a></li>
