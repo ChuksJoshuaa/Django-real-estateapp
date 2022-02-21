@@ -53,7 +53,9 @@ class ListingCreate(LoginRequiredMixin, CreateView):
 
 def search_view(request):
     query = request.GET['query']
-    post = Listing.objects.filter(state__icontains=query) or Listing.objects.filter(city__icontains=query)
+    post = Listing.objects.filter(state__icontains=query) or Listing.objects.filter(city__icontains=query) \
+           or Listing.objects.filter(garage__icontains=query) or Listing.objects.filter(bedrooms__icontains=query) \
+            or Listing.objects.filter(state__icontains=query) or Listing.objects.filter(price__icontains=query)
     context = {
         "listings": post
     }
