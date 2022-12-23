@@ -16,22 +16,17 @@ import cloudinary_storage
 import cloudinary
 import django_heroku
 from django.contrib.messages import constants as messages
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-# SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure--2g=pcqw=uz5idrx*^&1h#$lo13wr=9_w&+w!4k^x)9s235ad='
-SECRET_KEY = '4da213c467cdb6f2bed1f5bf00b8297763ab19fbf6474c61'
+DEBUG = os.getenv('DEBUG')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['https://cestate.herokuapp.com']
-
+ALLOWED_HOSTS = [os.getenv('LOCAL_HOST')]
 
 # Application definition
 
@@ -48,7 +43,7 @@ INSTALLED_APPS = [
     'captcha',
     'cloudinary',
 
-     #my_own_app
+    # my_own_app
     'realtors',
     'accounts',
     'listings',
@@ -147,10 +142,11 @@ MESSAGE_TAGS = {
 }
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'chuksmbanaso',
-    'API_KEY': '423979199723327',
-    'API_SECRET': 'ESQWs8zmwee3iCWooKfMQ4XqOi4'
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('API_KEY'),
+    'API_SECRET': os.getenv('API_SECRET')
 }
+
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -159,18 +155,16 @@ LOGIN_REDIRECT_URL = 'page-home'
 LOGIN_URL = 'account-user_login'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'wmltsqwgdafjpniq'
-EMAIL_HOST_USER = 'chuksmbanasoj@gmail.com'
-EMAIL_PORT = 465
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
 
-RECAPTCHA_PUBLIC_KEY = "6LeBNL8dAAAAANcQAnDwTB5d9iVtemfGRf8yWUni"
-RECAPTCHA_PRIVATE_KEY = "6LeBNL8dAAAAAAwgSlRTwTgY9bsW-3gFIX0pRuy0"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
