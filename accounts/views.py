@@ -1,3 +1,4 @@
+from django.views.generic import FormView
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -8,9 +9,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.apps import apps
 Contact = apps.get_model('contacts', 'Contact')
-from django.views.generic import FormView
 
 # Create your views here.
+
 
 def account_view(request):
     form = UserCreationForm()
@@ -19,7 +20,8 @@ def account_view(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f"Your account has been created! You are now able to log in")
+            messages.success(
+                request, f"Your account has been created! You are now able to log in")
             return redirect('account-user_login')
 
     else:
@@ -32,10 +34,10 @@ def account_view(request):
 
 @login_required
 def dashboard(request):
-    user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+    user_contacts = Contact.objects.order_by(
+        '-contact_date').filter(user_id=request.user.id)
 
     context = {
         'contacts': user_contacts
     }
-    return render(request, 'other/admin_dashboard.html', context)
-
+    return render(request, 'other/dashboard.html', context)

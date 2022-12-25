@@ -5,7 +5,7 @@
 {% block title %} | {{ listing.title }}{% endblock %}
 
 {% block name %}
-<section id="" class="py-5 text-white" style="background-color:;" xmlns="http://www.w3.org/1999/html">
+<section id="" class="py-5 text-white" xmlns="http://www.w3.org/1999/html">
         <div class="container">
           <div class="row text-center">
             <div class="col-md-12">
@@ -79,7 +79,7 @@
                         href="{% url 'update' listing.id %}">
                         <i class="fas fa-edit"></i>
                      </a>
-                     <a style="margin-left: 3%; animation: none;" class="btn btn-secondary btn-sm mt-1 mb-1"
+                     <a style="margin-left: 3%; animation: none;" class="btn btn-danger btn-sm mt-1 mb-1"
                          href="{% url 'delete' listing.id %}">
                           <i class="fas fa-trash"></i>
                      </a>

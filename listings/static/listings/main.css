@@ -250,7 +250,7 @@ p {
 
 @media screen and (min-width: 1100px) {
   nav {
-    height: 4.5em;
+    height: 4em;
     z-index: 9999;
     width: 100%;
     background: rgba(217, 214, 208, 0.3);
@@ -262,7 +262,14 @@ p {
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+  }
+
+  .listings-nav {
+    padding: 0.3rem 1rem;
+  }
+
+  .home-nav {
+    padding: 0.3rem 1rem;
   }
 
   .sidebar-header {
@@ -272,10 +279,6 @@ p {
     justify-content: space-between;
   }
 
-  .sidebar-header img {
-    position: absolute;
-    top: 1%;
-  }
   .sidebar-toggle {
     display: none;
   }
@@ -429,7 +432,7 @@ p {
 }
 
 .page-home {
-  height: 300px;
+  height: 250px;
   margin-bottom: 5px;
 }
 
@@ -545,9 +548,9 @@ p {
 /* article section */
 
 .article {
-  height: 1200px;
+  height: auto;
   background: hsl(210, 36%, 96%);
-  margin-bottom: 3%;
+  margin-bottom: 2em;
 }
 
 .article h5 {
@@ -569,7 +572,7 @@ p {
 
 .aside img {
   width: 400px;
-  height: 400px;
+  height: 300px;
   transition: all 0.2s linear;
   margin-bottom: 10px;
 }
@@ -646,6 +649,13 @@ p {
   }
 }
 
+.section-image-about {
+  height: 300px;
+  background-image: url("https://res.cloudinary.com/chuksmbanaso/image/upload/v1671940596/media/okay_evzt4r.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 @media (min-width: 768px) and (max-width: 990px) {
   #row-center {
     position: relative;
@@ -672,4 +682,11 @@ p {
   width: 60px;
   border-radius: 50%;
   margin: 2em;
+}
+
+.section-image-head {
+  height: 400px;
+  background-image: url("https://res.cloudinary.com/chuksmbanaso/image/upload/v1671940596/media/okay_evzt4r.jpg");
+  background-position: center;
+  background-size: cover;
 }

@@ -5,9 +5,7 @@
 {% block title %} | Welcome{% endblock %}
 
 {% block content %}
-    <section style="height: 600px;
-           background: url('{% static 'listings/Media/okay.jpg' %}');
-            background-size: cover; background-position: center;" id="back">
+    <section class="section-image-head" id="back">
         <div class="section1">
            <div class="lead">
               <h1>Property Searching Just Got So Easy</h1>
@@ -50,6 +48,7 @@
                    <div class="page-listing">
                       <div style="background: url('{{ listing.photo_main.url }}');
                        background-size: cover; background-position: center;" class="page-home">
+                       
                       <h2><span class="badge badge-secondary text-white">${{ listing.price | intcomma}}</span></h2>
                       </div>
                         <h5>{{ listing.title }}</h5>

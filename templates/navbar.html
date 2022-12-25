@@ -1,16 +1,16 @@
 {% load static %}
  <nav id="nav">
            <button class="sidebar-toggle" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
-        <aside class="sidebar" id="nav-center">
+        <aside class="sidebar home-nav" id="nav-center">
           <div class="sidebar-header">
              <img 
-             style="width: 60px; border-radius: 50%; margin-top: -0.3em;"
+             style="width: 50px; border-radius: 50%;"
                            src = "{% static 'listings/Media/logo.jpg' %}"
                            alt = "This is a logo" />
             <button class="close-btn"><i class="fas fa-times"></i></button>
           </div>
-            <a href="#home"></a>
-          <ul class="links" id="links">
+         <div>
+           <ul class="links" id="links" style="margin-top: 0.6rem">
             <li><a href="{% url 'page-home' %}"><i class="fa fa-home">home</i></a></li>
               {% if user.is_authenticated %}
                  <li><a href="{% url 'dashboard' %}"><i class="fa fa-dashcube">Dashboard</i></a></li>
@@ -22,8 +22,9 @@
             <li><a href="{% url 'page-about' %}"><i class="fa fa-check-circle">about</i></a></li>
             <li><a href="{% url 'listing-home' %}"><i class="fa fa-home">listings</i></a></li>
           </ul>
+         </div>
          <div>
-             <ul class="social-icons" id="social-icons">
+             <ul class="social-icons" id="social-icons" style="margin-top: 0.6rem">
                {% if user.is_authenticated %}
                  <li><a href="{% url 'account-user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true">Logout</i></a></li>
                {% else %}
