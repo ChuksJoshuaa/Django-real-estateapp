@@ -1,12 +1,12 @@
-{% extends "estate-base1.html" %}
+{% extends "estate_base.html" %}
 {% load crispy_forms_tags %}
 
 
-{% block name %}
+{% block content %}
 
 <body>
    <h1 style="margin-bottom: 3%;"></h1>
-  <div class="both">
+  <div class="both" style="height: 100vh;">
     <form action="." method="POST">{% csrf_token %}
         <fieldset class="field">
              <div class="join">Log In</div>
@@ -14,7 +14,7 @@
            {{ form|crispy }}
              <br>
            <div class="sign-in">
-             <button type="submit">Sign In</button>
+             <button class="btn btn-secondary" type="submit">Sign In</button>
                <small class="text-muted ml-2">
                <a href="#" style="text-decoration: none;">Forget Password?</a>
                </small>

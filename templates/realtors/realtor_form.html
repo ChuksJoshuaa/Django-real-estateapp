@@ -1,9 +1,9 @@
-{% extends "estate-base1.html" %}
+{% extends "estate_base.html" %}
 {% load crispy_forms_tags %}
-{% block name %}
+{% block content %}
 {% load static %}
 <body style="background-color: white;">
-  <div class="both">
+  <div class="both" style="margin-bottom: 3em">
       <h1 class="head"></h1>
     <form action="." method="POST" enctype="multipart/form-data">{% csrf_token %}
          <fieldset class="field">
@@ -20,5 +20,5 @@
     </form>
   </div>
 </body>
- {% include 'other/footer.html' %}
+
 {% endblock %}

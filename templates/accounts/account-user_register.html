@@ -1,11 +1,11 @@
-{% extends "estate-base1.html" %}
+{% extends "estate_base.html" %}
 {% load crispy_forms_tags %}
 
 
-{% block name %}
-<body style="background-color: white;">
+{% block content %}
+<body style="background-color: white; ">
     <h1 style="margin-bottom: 3%;"></h1>
-  <div class="both">
+  <div class="both" style="margin-bottom: 3em;">
     <form action="." method="POST">{% csrf_token %}
          <fieldset class="field">
              <div class="join">Create an Account</div>
@@ -13,10 +13,10 @@
            {{ form|crispy }}
              <br>
            <div>
-             <button type="submit">Sign Up</button>
+             <button class="btn btn-secondary" type="submit">Sign Up</button>
            </div>
           <div>
-              <small>Already Have an Account?<a href="{% url 'account-user_login' %}" style="text-decoration: none;">
+              <small >Already Have an Account?<a href="{% url 'account-user_login' %}" style="text-decoration: none;">
                   Sign In</a></small>
           </div>
          </fieldset>
